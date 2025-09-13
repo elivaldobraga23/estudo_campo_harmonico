@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campo Harmônico</title>
+    <link rel="stylesheet" href="style01.css">
+    <link rel="shortcut icon" href="imagem/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <main>
+        <h1>Estudo Campo Harmônico</h1>
+        <div id="perguntaNota">
+            <label for="notas">Escolha uma Nota: </label>
+            <select name="notas" id="notas">
+                <option value="" disabled selected></option>
+                <optgroup label="Naturais">
+                    <option value="do">C</option>
+                    <option value="re">D</option>
+                    <option value="mi">E</option>
+                    <option value="fa">F</option>
+                    <option value="sol">G</option>
+                    <option value="lá">A</option>
+                    <option value="si">B</option>
+                </optgroup>
+                <optgroup label="Sustenido">
+                    <option value="dosus">C#</option>
+                    <option value="resus">D#</option>
+                    <option value="misussus">E#</option>
+                    <option value="fasus">F#</option>
+                    <option value="solsus">G#</option>
+                    <option value="lásus">A#</option>
+                    <option value="sisus">Bí#</option>
+                </optgroup>
+            </select>
+            <input id="escolher" type="button" value="Escolher" onclick="escolher()">
+
+        </div>
+
+        <div id="perguntaGrau">
+            <p>Escolha uma nota acima para começar</p>
+            <!-- <p id="pergunta">Qual é o V Grau do campo harmônico de ${nota} Maior?</p>
+            <input class="escolha" type="button" value="G">
+            <input class="escolha" type="button" value="Am"><br>
+            <input class="escolha" type="button" value="F">
+            <input class="escolha" type="button" value="Dm"> -->
+        </div>
+
+        <div>
+            <input id="proximaPergunta" type="button" value="Próxima Pergunta">
+        </div>
+
+        <div id="placares">
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

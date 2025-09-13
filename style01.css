@@ -1,0 +1,204 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+
+}
+
+main {
+    display: flex;
+    flex-direction: column; /* coluna para organizar verticalmente */
+    justify-content: space-between; /* garante topo e fundo */
+    background-color: #0F1422;
+    color: white;
+    width: 50vw;
+    height: 80vh;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+
+main h1{
+    text-align: center;
+    padding: 5px;
+    margin: 20px;
+
+}
+
+label{
+    margin: 5px;
+}
+select{
+    background-color: grey;
+    color: white;
+    width: 100px;
+    margin-top: 10px;
+    padding: 5px;
+    border: none;
+
+}
+
+select::selection{
+    border-color: yellow;
+}
+input#escolher{
+    background-color: blue;
+    color: white;
+    width: 100px;
+    height: 25px;
+    margin: 5px;
+    padding: 2px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+div#perguntaGrau{
+    background-color: #1A2334;
+    color: white;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 10px;
+    width: 250px;
+    height: 200px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+p#pergunta{
+    margin-bottom: 10px;
+    font-size: 12.9pt;
+    padding: 10px;
+    font-weight: 500;
+    text-align: left;
+}
+
+input.escolha{
+    background-color: #0F1421;
+    color: white;
+    font-size: 14pt;
+    font-weight: 600;
+    margin: 5px;
+    width: 90px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+input#proximaPergunta{
+    background-color: blue;
+    color: white;
+    width: 200px;
+    height: 30px;
+    margin-bottom: 15px;
+    padding: 7px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+
+div#placares{
+    display: flex;
+    flex-direction: column;
+    align-items: start; 
+    width: 150px;
+    margin-left :25px;
+    line-height: 1.5;
+    
+}
+
+@media(max-width: 600px){
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    main {
+    width: 100vw;
+    height: 90vh;
+    
+    }
+
+
+    main h1{
+        font-size: 30pt; 
+        padding: 5px;
+        margin-top: 25px;
+
+    }
+
+    div#perguntaNota{
+        font-size: 25pt;
+        padding: 5px;
+        width: 100%;
+    }
+
+    select{
+        width: 100x;
+        height: 35px;
+        
+    }
+
+    input#escolher{
+        margin-top:25px;
+        width: 150px;
+        height: 40px;
+        
+        
+    }
+
+    div#perguntaGrau{
+        background-color: #1A2334;
+        color: white;
+        margin: auto;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 10px;
+        width: 250px;
+        height: 200px;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    p#pergunta{
+        font-size: 16pt;
+        padding: 10px;
+        font-weight: 500;
+    }
+
+    input.escolha{
+        font-size: 15pt;
+        margin: 5px;
+        width: 100px;
+        height: 40px;
+    }
+
+    input#proximaPergunta{
+        font-size: 16pt;
+        width: 200px;
+        height: 50px;
+        margin-bottom: 15px;
+    }
+
+    div#placares{
+        font-size: 15pt;
+        margin-bottom: 25px;
+    }
+}
