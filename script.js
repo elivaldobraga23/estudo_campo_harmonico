@@ -150,6 +150,7 @@ const camposHarmônicos = {
 const btnProxima = document.getElementById('proximaPergunta');
 btnProxima.disabled = true; // começa desativado
 
+let totalPerguntas = 0
 let acerto = 0;
 let erro = 0;
 
@@ -158,6 +159,10 @@ function escolher() {
     let notaEscolhida = selecionarNota.selectedOptions[0].text;
     let pergunta = document.getElementById('perguntaGrau');
     let divPlacares = document.getElementById('placares');
+    let telaFinal = document.getElementById('telaFinal')
+
+    pergunta.style.display = 'block'
+    telaFinal.style.display = 'none'
 
     if (selecionarNota.value === "") {
         pergunta.innerHTML = 'Por favor, escolha uma nota para começarmos';
@@ -203,10 +208,19 @@ function escolher() {
                 btn.style.backgroundColor = 'blue';
                 btn.style.color = 'white';
                 acerto += 1;
+                totalPerguntas += 1
             } else {
                 btn.style.backgroundColor = 'red';
                 btn.style.color = 'white';
-                erro += 1;
+                erro += 1
+                totalPerguntas += 1
+
+                //Mostrar a resposta Certa
+                inputs.forEach(b =>{
+                    if(b.value === respostaCerta){
+                        b.style.backgroundColor = 'blue'
+                    }
+                })
             }
 
             // desabilita todos os botões após a resposta
@@ -226,3 +240,22 @@ btnProxima.addEventListener('click', () => {
     escolher();           
     btnProxima.disabled = true; 
 });
+
+function finalizar(){
+    let confirmacao = confirm('Deseja Finalizar ?')
+    if(confirmacao){
+        let telaPergunta = document.getElementById('perguntaGrau');
+        let telaFinal = document.getElementById('telaFinal')
+        telaPergunta.style.display = 'none'
+        telaFinal.style.display = 'block'
+        telaFinal.innerHTML = `
+            <h2>Estudo Finalizado</h2>
+            <div id="paragrafosFinal">
+                <p>Total de Perguntas: ${totalPerguntas}</p>
+                <p>Total de Acertos: ${acerto}</p>
+                <p>Total de Erros: ${erro}</p>
+            </div>`
+    }
+    
+    
+}

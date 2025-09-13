@@ -65,7 +65,8 @@ input#escolher{
     cursor: pointer;
 }
 
-div#perguntaGrau{
+div#perguntaGrau,
+div#telaFinal{
     background-color: #1A2334;
     color: white;
     margin: auto;
@@ -77,6 +78,23 @@ div#perguntaGrau{
     border-radius: 5px;
     text-align: center;
 }
+
+div#telaFinal{
+    display: none;
+}
+
+div#telaFinal > h2 {
+    margin: 10px;
+}
+
+div#telaFinal > div#paragrafosFinal{
+    text-align: left;
+    margin-top: 30px;
+    padding: 5px;
+    line-height: 1.7;
+
+}
+
 
 p#pergunta{
     margin-bottom: 10px;
@@ -99,7 +117,10 @@ input.escolha{
     cursor: pointer;
 }
 
-input#proximaPergunta{
+
+input#proximaPergunta,
+input#btnFinalizar
+{
     background-color: blue;
     color: white;
     width: 200px;
@@ -109,6 +130,10 @@ input#proximaPergunta{
     border: none;
     cursor: pointer;
     border-radius: 5px;
+}
+
+input#btnFinalizar{
+    background-color: darkred;
 }
 
 
@@ -121,6 +146,11 @@ div#placares{
     margin-left :25px;
     line-height: 1.5;
     
+}
+
+p#telaFinal{
+    text-align: center;
+    margin-top: 10px;
 }
 
 @media(max-width: 600px){
