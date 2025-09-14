@@ -1,234 +1,264 @@
-*{
+* {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: black;
     color: whitesmoke;
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     height: 100vh;
-
 }
 
+/* Estilo base (mobile) */
 main {
     display: flex;
     flex-direction: column; /* coluna para organizar verticalmente */
-    justify-content: space-between; /* garante topo e fundo */
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
     background-color: #0F1422;
     color: white;
-    width: 50vw;
-    height: 80vh;
+    width: 100vw; /* ocupa quase toda a largura no celular */
+    height: 100vh; /* altura automática para caber conteúdo */
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    padding: 10px;
+    padding: 15px;
 }
 
-
-main h1{
+/* Ajusta título */
+main h1 {
     text-align: center;
-    padding: 5px;
-    margin: 20px;
-
+    margin-top: 50px;
+    font-size: 25pt;
 }
 
-label{
-    margin: 5px;
+label, select {
+  display: inline-block;
+  vertical-align: middle; /* garante alinhamento */
 }
-select{
+
+label {
+    font-size: 25pt;
+    margin: 10px;
+}
+select {
     background-color: grey;
     color: white;
-    width: 100px;
-    margin-top: 10px;
-    padding: 5px;
+    width: 75px;
+    padding: 10px;
     border: none;
-
+    border-radius: 5px;
 }
 
-select::selection{
-    border-color: yellow;
-}
-input#escolher{
+/* Botões */
+input#escolher {
     background-color: blue;
+    font-size: 15pt;
     color: white;
-    width: 100px;
-    height: 25px;
-    margin: 5px;
-    padding: 2px;
+    width: 100%;
+    max-width: 150px;
+    height: 40px;
+    margin: 10px auto;
+    padding: 5px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
 }
 
 div#perguntaGrau,
-div#telaFinal{
+div#telaFinal {
     background-color: #1A2334;
     color: white;
     margin: auto;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 10px;
-    width: 250px;
-    height: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+    width: 100%;
+    max-width: 300px;
+    height: auto ;
     border-radius: 5px;
     text-align: center;
 }
 
-div#telaFinal{
+div#telaFinal {
     display: none;
 }
 
 div#telaFinal > h2 {
+    font-size: 20pt;
     margin: 10px;
 }
 
-div#telaFinal > div#paragrafosFinal{
+div#telaFinal > div#paragrafosFinal {
+    font-size: 15pt;
     text-align: left;
-    margin-top: 30px;
+    margin-top: 20px;
     padding: 5px;
     line-height: 1.7;
-
 }
 
-
-p#pergunta{
+p#pergunta {
     margin-bottom: 10px;
-    font-size: 12.9pt;
+    font-size: 15pt;
+    width: auto;
     padding: 10px;
     font-weight: 500;
     text-align: left;
 }
 
-input.escolha{
+/* Botões de escolha */
+input.escolha {
     background-color: #0F1421;
     color: white;
-    font-size: 14pt;
+    font-size: 15pt;
     font-weight: 600;
     margin: 5px;
-    width: 90px;
-    height: 35px;
+    width: 100px;
+    height: 45px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
 }
 
-
+/* Botões maiores */
 input#proximaPergunta,
-input#btnFinalizar
-{
+input#btnFinalizar {
     background-color: blue;
     color: white;
-    width: 200px;
-    height: 30px;
-    margin-bottom: 15px;
-    padding: 7px;
+    width: 100%;
+    max-width: 250px;
+    height: 40px;
+    margin: 5px 0;
+    padding: 10px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
 }
 
-input#btnFinalizar{
+input#btnFinalizar {
     background-color: darkred;
 }
 
-
-
-div#placares{
+div#placares {
     display: flex;
     flex-direction: column;
     align-items: start; 
-    width: 150px;
-    margin-left :25px;
+    width: 100%;
+    max-width: 200px;
+    margin-left: 15px;
+    margin-bottom: 25px;
     line-height: 1.5;
-    
+    padding: 5px;
 }
 
-p#telaFinal{
+p#telaFinal {
     text-align: center;
     margin-top: 10px;
 }
 
-@media(max-width: 600px){
+/* ========================= */
+/* RESPONSIVIDADE */
+/* ========================= */
 
-    *{
-        margin: 0;
-        padding: 0;
-    }
-
+/* Tablets */
+@media (min-width: 768px) {
     main {
-    width: 100vw;
-    height: 90vh;
-    
+        width: 70vw;
+        height: auto;
+        padding: 20px;
     }
-
-
-    main h1{
-        font-size: 30pt; 
-        padding: 5px;
-        margin-top: 25px;
-
+    main h1 {
+        font-size: 20pt;
     }
+    input.escolha {
+        width: 110px;
+    }
+}
 
-    div#perguntaNota{
+/* Notebooks e desktops */
+@media (min-width: 1024px) {
+    main {
+        width: 50vw;
+        height: 85vh;
+    }
+    main h1 {
         font-size: 25pt;
-        padding: 5px;
-        width: 100%;
+        margin-top: 20px;
     }
 
-    select{
-        width: 100x;
-        height: 35px;
-        
+
+
+    div#placares {
+    display: flex;
+    flex-direction: column;
+    align-items: start; 
+    width: 100%;
+    max-width: 200px;
+    margin-top: 20px;
+    margin-left: 15px;
+    line-height: 1.5;
+    padding: 5px;
+}
+}
+
+/* Telas grandes (monitores 4K, TVs) */
+@media (min-width: 1440px) {
+    main {
+        width: 40vw;
+        height: 75vh;
+    }
+    main h1 {
+        font-size: 25pt;
     }
 
-    input#escolher{
-        margin-top:25px;
-        width: 150px;
-        height: 40px;
-        
-        
-    }
+    input#escolher {
+    background-color: blue;
+    font-size: 15pt;
+    color: white;
+    width: 100%;
+    max-width: 150px;
+    height: 40px;
+    margin: 10px auto;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
 
-    div#perguntaGrau{
-        background-color: #1A2334;
+    input#proximaPergunta,
+    input#btnFinalizar {
+        background-color: blue;
         color: white;
-        margin: auto;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        padding: 10px;
-        width: 250px;
-        height: 200px;
-        border-radius: 5px;
-        text-align: center;
-    }
-
-    p#pergunta{
-        font-size: 16pt;
-        padding: 10px;
-        font-weight: 500;
-    }
-
-    input.escolha{
-        font-size: 15pt;
-        margin: 5px;
-        width: 100px;
+        width: 100%;
+        max-width: 250px;
         height: 40px;
+        margin: 20px 0;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
     }
+    input#btnFinalizar {
+        background-color: darkred;
+    }
+ 
+    div#placares {
+    display: flex;
+    flex-direction: column;
+    align-items: start; 
+    width: 100%;
+    max-width: 200px;
+    margin-top: 55px;
+    margin-left: 15px;
+    line-height: 1.5;
+    padding: 5px;
+}
 
-    input#proximaPergunta{
-        font-size: 16pt;
-        width: 200px;
-        height: 50px;
-        margin-bottom: 15px;
-    }
 
-    div#placares{
-        font-size: 15pt;
-        margin-bottom: 25px;
-    }
 }
