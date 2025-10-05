@@ -205,7 +205,7 @@ function escolher() {
     inputs.forEach(btn => {
         btn.addEventListener('click', () => {
             if (btn.value === respostaCerta) {
-                btn.style.backgroundColor = 'blue';
+                btn.style.backgroundColor = 'green';
                 btn.style.color = 'white';
                 acerto += 1;
                 totalPerguntas += 1
@@ -218,7 +218,7 @@ function escolher() {
                 //Mostrar a resposta Certa
                 inputs.forEach(b =>{
                     if(b.value === respostaCerta){
-                        b.style.backgroundColor = 'blue'
+                        b.style.backgroundColor = 'green'
                     }
                 })
             }
